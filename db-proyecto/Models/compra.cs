@@ -14,6 +14,8 @@ namespace db_proyecto.Models
     
     public partial class compra
     {
+        internal string nombre;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public compra()
         {

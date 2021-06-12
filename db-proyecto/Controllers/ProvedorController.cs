@@ -1,20 +1,124 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
+using System.Text;
 using db_proyecto.Models;
-
-namespace Provedor.Controllers
+namespace db_proyecto.Controllers
 {
-    public class ProvedorController : Controller
+    public class ProveedorController : Controller
     {
-        // GET: Provedor
+        // GET: Proveedor
         public ActionResult Index()
         {
+            using (var db = new inventario2021Entities())
+            {
+
+                return View(db.proveedor.ToList());
+            }
+        }
+        public static string Nombreproveedor(int idproveedor)
+        {
+            using (var db = new inventario2021Entities())
+            {
+                return db.proveedor.Find(idproveedor).nombre;
+            }
+        }
+        public ActionResult Create()
+
+        {
             return View();
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(proveedor proveedor)
+        {
+            if (!ModelState.IsValid)
+                return View();
+            try
+            {
+                using (var db = new inventario2021Entities())
+                {
+                    db.proveedor.Add(proveedor);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception Ex)
+            {
+                ModelState.AddModelError("", "error" + Ex);
+                return View();
+            }
+        }
+        public ActionResult Edit(int id)
+        {
+
+            try
+            {
+                using (var db = new inventario2021Entities())
+                {
+                    proveedor findUser = db.proveedor.Where(a => a.id == id).FirstOrDefault();
+                    return View(findUser);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "error " + ex);
+                return View();
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(proveedor proveedorEdit)
+
+        {
+            if (!ModelState.IsValid)
+                return View();
+            try
+            {
+                using (var db = new inventario2021Entities())
+                {
+                    proveedor user = db.proveedor.Find(proveedorEdit.id);
+                    user.nombre = proveedorEdit.nombre;
+                    user.direccion = proveedorEdit.direccion;
+                    user.telefono = proveedorEdit.telefono;
+                    user.nombre_contacto = proveedorEdit.nombre_contacto;
+
+
+                    db.SaveChanges();
+                    return RedirectToAction("index");
+                }
+            }
+            catch (Exception ex)
+
+            {
+                ModelState.AddModelError("", "error " + ex);
+                return View();
+            }
+        }
+
+
+        public ActionResult Details(int id)
+        {
+            using (var db = new inventario2021Entities())
+            {
+                proveedor user = db.proveedor.Find(id);
+                return View(user);
+            }
+        }
+        public ActionResult Delete(int id)
+        {
+            using (inventario2021Entities db = new inventario2021Entities())
+            {
+                var Usuario = db.proveedor.Find(id);
+                db.proveedor.Remove(Usuario);
+                db.SaveChanges();
+                return RedirectToAction("index");
+            }
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿@model db_proyecto.Models.producto
 
 @{
-    ViewBag.Title = "detail";
+    ViewBag.Title = "Details";
+    var nombreproveedor = Model.nombre;
 }
 
-<h2>detail</h2>
+<h2>Details</h2>
 
 <div>
     <h4>producto</h4>
@@ -43,16 +44,20 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.id_proveedor)
+            Proveedor
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.id_proveedor)
+            @db_proyecto.Controllers.ProductoController.NombreProveedor(Model.id_proveedor)
         </dd>
 
     </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>}
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

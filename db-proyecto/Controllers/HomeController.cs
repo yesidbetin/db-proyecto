@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using db_proyecto.Models;
+﻿using System.Web.Mvc;
 
-namespace Home.Controllers
+namespace db_proyecto.Controllers
 {
     public class HomeController : Controller
     {

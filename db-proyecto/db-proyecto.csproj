@@ -49,10 +49,10 @@
       <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
@@ -70,8 +70,8 @@
     <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.20\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data.EntityFramework, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.20\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.11\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
@@ -174,14 +174,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
+    <Compile Include="App_Start\BundleConfig3.cs" />
+    <Compile Include="App_Start\BundleConfig4.cs" />
+    <Compile Include="App_Start\BundleConfig5.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\CompraController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductoCompraController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\ProductoImagenController.cs" />
     <Compile Include="Controllers\ProvedorController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\UsuarioRolController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -301,10 +309,38 @@
     <Content Include="Views\Roles\edit.cshtml" />
     <Content Include="Views\Roles\delete.cshtml" />
     <Content Include="Views\Usuario\delete.cshtml" />
+    <Content Include="Views\Compra\create.cshtml" />
+    <Content Include="Views\Compra\edit.cshtml" />
+    <Content Include="Views\Compra\delete.cshtml" />
+    <Content Include="Views\Compra\details.cshtml" />
+    <Content Include="Views\Compra\index.cshtml" />
+    <Content Include="Views\Compra\ListarCliente.cshtml" />
+    <Content Include="Views\Compra\ListarUsuarios.cshtml" />
+    <Content Include="Views\ProductoCompra\index.cshtml" />
+    <Content Include="Views\ProductoCompra\create.cshtml" />
+    <Content Include="Views\ProductoCompra\details.cshtml" />
+    <Content Include="Views\ProductoCompra\edit.cshtml" />
+    <Content Include="Views\ProductoCompra\ListarUsuarios.cshtml" />
+    <Content Include="Views\ProductoCompra\ListarCliente.cshtml" />
+    <Content Include="Views\ProductoImagen\index.cshtml" />
+    <Content Include="Views\ProductoImagen\create.cshtml" />
+    <Content Include="Views\ProductoImagen\delete.cshtml" />
+    <Content Include="Views\ProductoImagen\edit.cshtml" />
+    <Content Include="Views\ProductoImagen\ListarProducto.cshtml" />
+    <Content Include="Views\Provedor\create.cshtml" />
+    <Content Include="Views\Provedor\edit.cshtml" />
+    <Content Include="Views\Provedor\delete.cshtml" />
+    <Content Include="Views\UsuarioRol\details.cshtml" />
+    <Content Include="Views\UsuarioRol\edit.cshtml" />
+    <Content Include="Views\UsuarioRol\create.cshtml" />
+    <Content Include="Views\UsuarioRol\index.cshtml" />
+    <Content Include="Views\UsuarioRol\ListarNombreUsuario.cshtml" />
+    <Content Include="Views\Producto\ListarProvedor.cshtml" />
+    <Content Include="Views\Provedor\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Provedor\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

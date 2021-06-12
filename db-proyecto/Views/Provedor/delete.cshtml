@@ -1,0 +1,49 @@
+﻿@model db_proyecto.Models.proveedor
+
+@{
+    ViewBag.Title = "Details";
+    var nombreProducto = Model.nombre;
+}
+<h2>Detalles del proveedor</h2>
+
+<div>
+    <h4>proveedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            Nombre
+        </dd>
+
+        <dt>
+            Dirreccion
+        </dt>
+
+        <dd>
+            Dirreccio
+        </dd>
+
+        <dt>
+            Telefono
+        </dt>
+
+        <dd>
+            Telefono
+        </dd>
+
+        <dt>
+            Nombre Contacto
+        </dt>
+
+        <dd>
+            @db_proyecto.Controllers.ProductoController.NombreProveedor(Model.id)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar proveedor " + nombreProducto, "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Regresar a lista ", "Index")
+</p>

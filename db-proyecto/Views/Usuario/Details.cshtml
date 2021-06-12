@@ -2,36 +2,37 @@
 
 @{
     ViewBag.Title = "Details";
+    var nombreUsuario = Model.nombre;
 }
 
-<h2>Detalles</h2>
+<h2>Detalles del Usuario: @nombreUsuario</h2>
 
 <div>
-    <h4>Usuario</h4>
+    <h4>usuario</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombre)
+            Nombre usuario
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nombre)
+            Nombre Usuario
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.apellido)
+            Apellido Usuario
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.apellido)
+            Fecha de Nacimiento
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fecha_nacimiento)
+            Correo Usuario
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.fecha_nacimiento)
+            Contraseña Usuario
         </dd>
 
         <dt>
@@ -42,17 +43,9 @@
             @Html.DisplayFor(model => model.email)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.password)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Volver a la lista", "Index")
+    @Html.ActionLink("Editar el usuario " + nombreUsuario, "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Regresar ala lista ", "Index")
 </p>
