@@ -178,6 +178,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ProvedorController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -285,12 +286,25 @@
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Usuario\edit.cshtml" />
     <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Producto\index.cshtml" />
+    <Content Include="Views\Producto\create.cshtml" />
+    <Content Include="Views\Producto\detail.cshtml" />
+    <Content Include="Views\Producto\edit.cshtml" />
+    <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\Usuario\test.cshtml" />
+    <Content Include="Views\Clientes\create.cshtml" />
+    <Content Include="Views\Clientes\detail.cshtml" />
+    <Content Include="Views\Clientes\edit.cshtml" />
+    <Content Include="Views\Clientes\index.cshtml" />
+    <Content Include="Views\Roles\index.cshtml" />
+    <Content Include="Views\Roles\create.cshtml" />
+    <Content Include="Views\Roles\edit.cshtml" />
+    <Content Include="Views\Roles\delete.cshtml" />
+    <Content Include="Views\Usuario\delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Clientes\" />
     <Folder Include="Views\Provedor\" />
-    <Folder Include="Views\Roles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
